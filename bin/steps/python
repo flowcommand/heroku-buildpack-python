@@ -90,8 +90,8 @@ fi
 # since the version is changing and could lead to runtime errors
 # with compiled extensions.
 if [ -d .heroku/python ] && [ ! -f .heroku/python-sqlite3-version ] && python_sqlite3_check "$PYTHON_VERSION"; then
-  puts-step "Need to update SQLite3, clearing cache"
-  rm -fr .heroku/python-stack .heroku/python-version .heroku/python .heroku/vendor
+  puts-step "Official Heroku build-pack would normally clear the cache here, but custom FlowCommand buildpack is not doing that to speed up build time"
+  # rm -fr .heroku/python-stack .heroku/python-version .heroku/python .heroku/vendor
 fi
 
 if [ -f .heroku/python-version ]; then
